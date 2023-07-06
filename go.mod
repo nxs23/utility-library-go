@@ -1,4 +1,4 @@
-module github.com/nxs23/utility-library-go/logging
+module github.com/nxs23/utility-library-go
 
 go 1.20
 

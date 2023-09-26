@@ -15,6 +15,8 @@ type Logging interface {
 	Fatalf(format string, v ...interface{})
 	Panicf(format string, v ...interface{})
 	Printf(format string, v ...interface{})
+	GetMode() string
+	GetLogger() *log.Logger
 }
 
 type Logger struct {
@@ -35,6 +37,14 @@ func NewLogger(module string) *Logger {
 		Mode:   mode,
 		Logger: log,
 	}
+}
+
+func (l *Logger) GetMode() string {
+	return l.Mode
+}
+
+func (l *Logger) GetLogger() *log.Logger {
+	return l.Logger
 }
 
 func (l *Logger) Fatalf(format string, err ...interface{}) {

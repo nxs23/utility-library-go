@@ -73,7 +73,6 @@ func (c *Config) GetInterval() time.Duration {
 }
 
 func getDefaultDsn() string {
-
 	// Get MySQL envs
 	user := os.Getenv("MYSQL_USER")
 	if user != "" {

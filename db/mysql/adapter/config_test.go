@@ -25,3 +25,8 @@ func TestDefaultConfig(t *testing.T) {
 	assert.Equal(t, config.GetInterval(), DEFAULT_MYSQL_ATTEMPT_INTERVAL)
 	assert.Equal(t, config.GetMaxAttempts(), DEFAULT_MYSQL_MAX_ATTEMPTS)
 }
+
+func TestGetDefaultDsn(t *testing.T) {
+	defaultDsn := ":@tcp(:)/?charset=utf8mb4&parseTime=True&loc=Local"
+	assert.Equal(t, defaultDsn, getDefaultDsn())
+}
